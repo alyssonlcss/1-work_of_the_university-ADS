@@ -3,6 +3,7 @@
 
 # Object files
 *.o
+1B.bin
 *.ko
 *.obj
 *.elf

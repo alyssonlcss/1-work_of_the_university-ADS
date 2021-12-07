@@ -1,5 +1,7 @@
 #include "../Headers/functions.h"
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 void upHeap(int i, int *vec) {
     int j = i/2, temp;
@@ -61,15 +63,8 @@ void buildHeap(int *vec, int n) {
 
 void output(int *vec, int n) {
     int i;
-
-    if(vec[0] == 0) {
-        for(i = 1; i <= n; i++)
-            printf("%d, ", vec[i]);
-    }
-    else {
-        for(i = 0; i < n; i++)
-            printf("%d, ", vec[i]);
-    }
+    for(i = 1; i <= n; i++)
+         printf("%d, ", vec[i]);
 }
 
 void heapSort(int *vec, int n) {
@@ -96,6 +91,56 @@ void insertionSort(int *vec, int n) {
         }
         vec[i+1] = key;
     }
+}
+
+void fileWrite(int n, char *name) {
+    int i;
+    int num;
+    FILE *file = fopen(name, "wb");
+
+    srand(time(NULL));
+    for(i = 0; i < n; i++) {
+        num = rand() % 1001;
+        fwrite(&num, sizeof(num), 1, file);
+    }
+    fclose(file);
+}
+
+void fileRead(int *vec, char *name) {
+    int i = 1;
+    int num;
+    FILE *file = fopen(name, "rb");
+    if(!file) {
+        puts("Error: Couldn't open random");
+        exit(1);
+    }
+    while(fread(&num, sizeof(num), 1, file)) {
+        vec[i] = num;
+        i++;
+    }
+    fclose(file);
+}
+
+void testHeapSort(int n, char *name) {
+    int *vec = (int*) malloc((n+1) * sizeof(int));
+    clock_t start, end;
+    fileRead(vec, name);
+    start = clock();
+    heapSort(vec, n);
+    end = clock();
+    printf("\nHeap Sort (%s): %.2f\n", name, (float)(end - start) / CLOCKS_PER_SEC);
+    free(vec);
+}
+
+void testInsertionSort(int n, char *name) {
+    int *vec = (int*) malloc((n+1) * sizeof(int));
+    clock_t start, end;
+    fileRead(vec, name);
+    start = clock();
+    insertionSort(vec, n);
+    end = clock();
+    printf("\nInsertion Sort (%s): %.2f\n", name, (float)(end - start) / CLOCKS_PER_SEC);
+    free(vec);
 }
 
 void exercise_1() {
@@ -135,5 +180,4 @@ void exercise_3(){
     puts("\nInsertion Sort:");
     insertionSort(vec, n);
     output(vec, n);
-    
 }

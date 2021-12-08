@@ -1,2 +1,2 @@
-# University-Work-of-A.D.S
+# First_part_of_the_work_of_the_university-ADS
 Advanced data structure experiments

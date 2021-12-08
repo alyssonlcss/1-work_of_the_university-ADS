@@ -1,6 +1,8 @@
-#include "../Headers/functions.h"
+#include "../Headers/exercises.h"
 #include <stdio.h>
+#include <string.h>
 #include <time.h>
+
 #include <stdlib.h>
 
 void upHeap(int i, int *vec) {
@@ -128,7 +130,17 @@ void testHeapSort(int n, char *name) {
     start = clock();
     heapSort(vec, n);
     end = clock();
-    printf("\nHeap Sort (%s): %.2f\n", name, (float)(end - start) / CLOCKS_PER_SEC);
+
+    if(!strcmp(name, _1K)) {
+        printf("\n\n\tTESTES DO HEAP SORT");
+        printf("\nHeap Sort (%s): %.5f sec\n", "1K", (float)(end - start) / CLOCKS_PER_SEC);
+    }
+    else if(!strcmp(name, _100K))
+        printf("\nHeap Sort (%s): %.5f sec\n", "100K", (float)(end - start) / CLOCKS_PER_SEC);
+    else if(!strcmp(name, _10M))
+        printf("\nHeap Sort (%s): %.5f sec\n", "10M", (float)(end - start) / CLOCKS_PER_SEC);
+    else
+        printf("\nHeap Sort (%s): %.5f sec\n", "1B", (float)(end - start) / CLOCKS_PER_SEC);
     free(vec);
 }
 
@@ -139,7 +151,17 @@ void testInsertionSort(int n, char *name) {
     start = clock();
     insertionSort(vec, n);
     end = clock();
-    printf("\nInsertion Sort (%s): %.2f\n", name, (float)(end - start) / CLOCKS_PER_SEC);
+    if(!strcmp(name, _1K)) {
+        printf("\n\tTESTES DO INSERTION SORT\n");
+        printf("Insertion Sort (%s): %.5f sec\n", "1K", (float)(end - start) / CLOCKS_PER_SEC);
+    }
+    else if(!strcmp(name, _100K))
+        printf("\nInsertion Sort (%s): %.5f sec\n", "100K", (float)(end - start) / CLOCKS_PER_SEC);
+    else if(!strcmp(name, _10M))
+        printf("\nInsertion Sort (%s): %.5f sec\n", "10M", (float)(end - start) / CLOCKS_PER_SEC);
+    else
+        printf("\nInsertion Sort (%s): %.5f sec\n", "1B", (float)(end - start) / CLOCKS_PER_SEC);
+
     free(vec);
 }
 
@@ -165,7 +187,7 @@ void exercise_2(){
     int i, vec[] = {0,33,78,39,28,95,70,60,66};
     
     vec[0] = sizeof(vec)/sizeof(vec[0])-1;
-    puts("\n\t# EXERCISE 2\nInput:");
+    puts("\n\n\t# EXERCISE 2\nInput:");
     output(vec, vec[0]);
     puts("\nHeap Sort: ");
     heapSort(vec, vec[0]);
@@ -175,7 +197,7 @@ void exercise_2(){
 void exercise_3(){
     int i, vec[] = {33,78,39,28,95,70,60,66};
     int n = sizeof(vec)/sizeof(vec[0]);
-    puts("\n\t# EXERCISE 3\nInput:");
+    puts("\n\n\t# EXERCISE 3\nInput:");
     output(vec, n);
     puts("\nInsertion Sort:");
     insertionSort(vec, n);

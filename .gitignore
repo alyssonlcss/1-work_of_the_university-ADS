@@ -2,9 +2,11 @@
 *.d
 .vscode
 
+
 # Object files
 *.o
-1B.bin
+1B*
+1
 *.ko
 *.obj
 *.elf

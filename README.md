@@ -1,4 +1,4 @@
-# First_part_of_the_work_of_the_university-ADS
+# First part of the work of the university - ADS
 Advanced data structure experiments
 
 ## Relatório

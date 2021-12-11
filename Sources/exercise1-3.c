@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 void upHeap(int i, int *vec) {

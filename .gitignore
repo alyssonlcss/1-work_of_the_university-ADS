@@ -5,16 +5,14 @@
 
 # Object files
 *.o
-1B*
 1K*
+10M*
 100K*
+1M*
 200K*
 400K*
 600K*
 800K*
-1M*
-10M*
-1
 *.ko
 *.obj
 *.elf

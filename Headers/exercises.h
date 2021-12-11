@@ -15,6 +15,7 @@
 #define _800K "../bin/second_part/800K.bin"
 #define _1M "../bin/second_part/1M.bin"
 
+
 void upHeap(int i, int *vec);
 void dropHeap(int i, int *vec, int n);
 void insertHeap(int new, int *vec, int *n);

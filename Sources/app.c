@@ -13,6 +13,7 @@ int main() {
     exercise_3();
 
     //Test to Heap Sort
+    createFiles();
     testHeapSort(1000, _1K); // 0,00 sec
     testHeapSort(100000, _100K); // 0,02 sec
     testHeapSort(10000000, _10M); // 3,31 sec

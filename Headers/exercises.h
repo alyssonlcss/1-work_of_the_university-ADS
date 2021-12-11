@@ -27,6 +27,7 @@ void fileWrite(int n, char *name);
 void fileRead(int *vec, char *name);
 void fileWrite2(unsigned int n, char *name);
 void fileRead2(unsigned int *vec, unsigned int n);
+void createFiles();
 void testHeapSort(int n, char *name);
 void testInsertionSort(int n, char *name);
 void divMethod(unsigned int * keys, unsigned int *table, unsigned int n);

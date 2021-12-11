@@ -145,7 +145,7 @@ void testHeapSort(int n, char *name) {
 }
 
 void testInsertionSort(int n, char *name) {
-    int *vec = (int*) malloc((n+1) * sizeof(int));
+    int i, *vec = (int*) malloc((n+1) * sizeof(int));
     clock_t start, end;
     fileRead(vec, name);
     start = clock();
@@ -202,4 +202,15 @@ void exercise_3(){
     puts("\nInsertion Sort:");
     insertionSort(vec, n);
     output(vec, n);
+}
+
+void createFiles() {
+    fileWrite(1000, _1K);
+    fileWrite(100000, _100K);
+    fileWrite(10000000, _10M);
+    fileWrite2(200000, _200K);
+    fileWrite2(400000, _400K);
+    fileWrite2(600000, _600K);
+    fileWrite2(800000, _800K);
+    fileWrite2(1000000, _1M);
 }

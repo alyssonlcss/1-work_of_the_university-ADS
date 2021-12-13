@@ -2,7 +2,7 @@
 Advanced data structure experiments
 
 ## Relatório
-![Screenshot](image/1.png)
-![Screenshot](image/2.png)
-![Screenshot](image/3.png)
+![Screenshot](image/i.png)
+![Screenshot](image/ii.png)
+![Screenshot](image/iii.png)
 
